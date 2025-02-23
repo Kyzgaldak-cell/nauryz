@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наурыз мерекесі - Ойын есеп</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5dc;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .question {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .input-box {
+            padding: 10px;
+            font-size: 18px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #008000;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #005700;
+        }
+        .result {
+            font-size: 22px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Наурыз мерекесі - Ойын есеп</h1>
+    <div class="container">
+        <p class="question">Би билеп жатқан адамдардың санын есептеңіз (жігіттер - 6, қыздар - 4).</p>
+        <input type="number" id="answer1" class="input-box">
+        <button class="btn" onclick="checkAnswer(1, 10)">Тексеру</button>
+        <p id="result1" class="result"></p>
+    </div>
+    
+    <div class="container">
+        <p class="question">Тамашалап тұрған адамдарды есептеңіз (балалар - 5, қыздар - 3).</p>
+        <input type="number" id="answer2" class="input-box">
+        <button class="btn" onclick="checkAnswer(2, 8)">Тексеру</button>
+        <p id="result2" class="result"></p>
+    </div>
+    
+    <div class="container">
+        <p class="question">Барлығы Наурыз тойына жиналған адамдар санын есептеңіз.</p>
+        <input type="number" id="answer3" class="input-box">
+        <button class="btn" onclick="checkAnswer(3, 25)">Тексеру</button>
+        <p id="result3" class="result"></p>
+    </div>
+    
+    <script>
+        function checkAnswer(questionNumber, correctAnswer) {
+            let userAnswer = document.getElementById("answer" + questionNumber).value;
+            let result = document.getElementById("result" + questionNumber);
+            
+            if (parseInt(userAnswer) === correctAnswer) {
+                result.innerHTML = "✅ Дұрыс!";
+                result.style.color = "green";
+            } else {
+                result.innerHTML = "❌ Қате, қайталап көріңіз.";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
